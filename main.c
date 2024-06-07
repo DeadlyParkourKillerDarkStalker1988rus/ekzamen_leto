@@ -2,8 +2,19 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <assert.h>
+
+
+void test_sqrt_calculation() {
+    assert(sqrt(4) == 2.0);
+    assert(sqrt(9) == 3.0);
+    assert(sqrt(16) == 4.0);
+}
 
 int main(int argc, char *argv[]) {
+
+    test_sqrt_calculation();
+
     if (argc < 2) {
         printf("Usage: %s <numbers>\n", argv[0]);
         return 1;
@@ -15,7 +26,7 @@ int main(int argc, char *argv[]) {
     while (token != NULL) {
         int num = atoi(token);
         double sqrt_num = sqrt(num);
-        printf("%.2f\n", sqrt_num);
+        printf("%g\n", sqrt_num);
 
         token = strtok(NULL, " ");
     }
